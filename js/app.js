@@ -36,10 +36,10 @@ function submitConnexion(event) {
   // Demo validation - in production this would be an API call
   // For demo purposes, accept any email format and password length > 3
   if (email && password.length > 3) {
+    window.scrollTo(0, 0);
     form.hidden = true;
     document.getElementById('connexion-error').hidden = true;
     document.getElementById('connexion-success').hidden = false;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     // Store ambassador session
     sessionStorage.setItem('ambassadorEmail', email);
     sessionStorage.setItem('ambassadorLoggedIn', 'true');
@@ -68,10 +68,10 @@ function switchPage(key) {
   document.querySelectorAll('.page').forEach(function (p) {
     p.hidden = true;
   });
+  window.scrollTo(0, 0);
   const target = document.getElementById('section-' + key);
   if (target) {
     target.hidden = false;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
 
@@ -84,9 +84,9 @@ function submitContact(event) {
     form.reportValidity();
     return;
   }
+  window.scrollTo(0, 0);
   form.hidden = true;
   document.getElementById('contact-success').hidden = false;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /* ---------- Faire une demande – forms ---------- */
