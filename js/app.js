@@ -13,6 +13,43 @@ function showHome() {
   document.getElementById('breadcrumb-current').textContent = '';
 }
 
+function showConnexion() {
+  switchPage('connexion');
+  const bc = document.getElementById('breadcrumb');
+  bc.hidden = false;
+  document.getElementById('breadcrumb-current').textContent = 'Espace Ambassadeur';
+}
+
+/* ---------- Connexion / Login ---------- */
+
+function submitConnexion(event) {
+  event.preventDefault();
+  const form = event.target;
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  const email = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+
+  // Demo validation - in production this would be an API call
+  // For demo purposes, accept any email format and password length > 3
+  if (email && password.length > 3) {
+    form.hidden = true;
+    document.getElementById('connexion-error').hidden = true;
+    document.getElementById('connexion-success').hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Store ambassador session
+    sessionStorage.setItem('ambassadorEmail', email);
+    sessionStorage.setItem('ambassadorLoggedIn', 'true');
+  } else {
+    document.getElementById('connexion-error').hidden = false;
+  }
+}
+
+/* ---------- Navigation helpers ---------- */
+
 /**
  * @param {string} sectionKey  – One of: contact | demande | suivi | simulation
  * @param {string} label       – Breadcrumb label
@@ -426,8 +463,8 @@ var SIM_STEPS = [
     question: 'Quel est votre âge ?',
     type: 'choice',
     options: [
-      { value: 'moins15', label: 'Moins de 15 ans', icon: '🧒' },
-      { value: '15_17',   label: '15 à 17 ans',     icon: '🎒' },
+      { value: 'moins16', label: 'Moins de 16 ans', icon: '🧒' },
+      { value: '16_17',   label: '16 à 17 ans',     icon: '🎒' },
       { value: '18_25',   label: '18 à 25 ans',     icon: '🎓' },
       { value: 'plus25',  label: 'Plus de 25 ans',  icon: '👤' },
     ],
