@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Ville de Corbeil-Essonnes">
+  <!-- Outer circle -->
+  <circle cx="60" cy="60" r="56" fill="#003080" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Shield shape -->
+  <path d="M60 22 L86 35 L86 65 Q86 82 60 95 Q34 82 34 65 L34 35 Z"
+        fill="#ffffff" stroke="#003080" stroke-width="1.5"/>
+
+  <!-- Inner shield - blue -->
+  <path d="M60 28 L82 39 L82 63 Q82 78 60 90 Q38 78 38 63 L38 39 Z"
+        fill="#003080"/>
+
+  <!-- Fleur-de-lis stylisée (top) -->
+  <path d="M60 34 C60 34 56 40 60 44 C64 40 60 34 60 34 Z" fill="#FFD700"/>
+  <path d="M55 38 C55 38 52 42 55 46 C58 43 55 38 55 38 Z" fill="#FFD700"/>
+  <path d="M65 38 C65 38 68 42 65 46 C62 43 65 38 65 38 Z" fill="#FFD700"/>
+
+  <!-- Horizontal bar (ceinture) -->
+  <rect x="38" y="58" width="44" height="5" rx="2" fill="#FFD700"/>
+
+  <!-- Vague de la Seine stylisée (bottom of shield) -->
+  <path d="M42 68 Q51 63 60 68 Q69 73 78 68 L78 75 Q69 80 60 75 Q51 70 42 75 Z"
+        fill="#4fc3f7" opacity="0.85"/>
+
+  <!-- Text arc (city name) -->
+  <text font-family="'Georgia', serif" font-size="7.5" fill="#ffffff" text-anchor="middle" font-weight="bold">
+    <textPath href="#arc-top" startOffset="50%">CORBEIL-ESSONNES</textPath>
+  </text>
+
+  <!-- Small star decorations -->
+  <circle cx="44" cy="108" r="2" fill="#FFD700"/>
+  <circle cx="60" cy="112" r="2" fill="#FFD700"/>
+  <circle cx="76" cy="108" r="2" fill="#FFD700"/>
+
+  <!-- Paths for text arc -->
+  <defs>
+    <path id="arc-top" d="M 12 60 A 48 48 0 0 1 108 60"/>
+  </defs>
+</svg>
