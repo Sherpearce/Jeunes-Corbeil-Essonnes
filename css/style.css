@@ -123,6 +123,27 @@ a:hover { text-decoration: underline; }
   text-overflow: ellipsis;
 }
 
+/* Espace Ambassadeur button */
+.btn-connexion {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,.75);
+  border-radius: 6px;
+  padding: .5rem 1.1rem;
+  font-family: var(--font);
+  font-size: .88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-connexion:hover {
+  background: rgba(255,255,255,.15);
+  border-color: var(--white);
+}
+
 /* Tricolor bar */
 .tricolor-bar {
   display: flex;
