@@ -51,7 +51,7 @@
 
         <!-- Image panel -->
         <div class="connexion-visual" aria-hidden="true">
-          <div class="connexion-visual-caption">
+          <div class="connexion-visual-caption" style="background-image: url('assets/amba.png');">
             <h3>Bienvenue dans l'Espace Ambassadeur</h3>
             <p>Accédez à votre tableau de bord, gérez les dossiers et suivez les dispositifs jeunesse de Corbeil-Essonnes.</p>
           </div>
@@ -87,14 +87,14 @@
                 placeholder="••••••••"
               />
             </div>
-            <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+            <div class="form-group checkbox-row">
               <input type="checkbox" id="login-remember" name="remember" />
-              <label for="login-remember" style="margin: 0; font-weight: 400; cursor: pointer;">Se souvenir de moi</label>
+              <label for="login-remember" class="checkbox-label">Se souvenir de moi</label>
             </div>
             <p class="form-note"><span class="req">*</span> Champs obligatoires</p>
             <div class="form-actions">
               <button type="submit" class="btn-primary">Se connecter</button>
-              <a href="index.html" class="btn-ghost" style="display:inline-flex;align-items:center;padding:.68rem 1.4rem;border-radius:6px;border:1.5px solid var(--border);color:var(--text-muted);font-size:.97rem;text-decoration:none;">Annuler</a>
+              <a href="index.html" class="btn-ghost btn-link">Annuler</a>
             </div>
             <p class="forgot-link">
               <a href="#" onclick="alert('Merci de contacter la Direction de la Jeunesse pour réinitialiser votre mot de passe.'); return false;">Mot de passe oublié ?</a>

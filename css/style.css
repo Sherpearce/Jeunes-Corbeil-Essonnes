@@ -865,6 +865,7 @@ textarea { resize: vertical; min-height: 120px; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 520px;
+  align-items: stretch;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -923,6 +924,7 @@ textarea { resize: vertical; min-height: 120px; }
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: stretch;
   gap: 1.5rem;
 }
 
@@ -937,6 +939,32 @@ textarea { resize: vertical; min-height: 120px; }
   font-size: .9rem;
   color: var(--text-muted);
   margin-top: -.75rem;
+}
+
+.connexion-form-side .form,
+.connexion-form-side > div,
+#connexion-success,
+#connexion-error {
+  width: 100%;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.checkbox-row .checkbox-label {
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .forgot-link {
