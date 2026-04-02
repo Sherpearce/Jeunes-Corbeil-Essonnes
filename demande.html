@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faire une demande – Direction de la Jeunesse – Corbeil-Essonnes</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand" aria-label="Accueil">
+        <img src="assets/logo-corbeil.svg" alt="Ville de Corbeil-Essonnes" class="header-logo" />
+        <div class="header-titles">
+          <span class="header-city">Corbeil-Essonnes</span>
+          <span class="header-dept">Direction de la Jeunesse</span>
+        </div>
+      </a>
+      <nav id="breadcrumb" class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span id="breadcrumb-current">Faire une demande</span>
+      </nav>
+      <a href="connexion.html" class="btn-connexion">Espace Ambassadeur</a>
+    </div>
+    <!-- Tricolor bar -->
+    <div class="tricolor-bar">
+      <div class="tc-blue"></div>
+      <div class="tc-white"></div>
+      <div class="tc-red"></div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main id="app">
+
+    <!-- ---- FAIRE UNE DEMANDE ---- -->
+    <section id="section-demande" class="page">
+      <div class="page-header">
+        <h2>Faire une demande</h2>
+        <p>Sélectionnez le dispositif pour lequel vous souhaitez déposer un dossier :</p>
+      </div>
+      <div class="card-grid">
+
+        <button class="nav-card" onclick="showDemandeForm('projet-jeune')">
+          <span class="card-icon" aria-hidden="true">💡</span>
+          <span class="card-title">Projet Jeune</span>
+          <span class="card-hint">Financement de projets culturels, artistiques ou personnels (15–25 ans)</span>
+        </button>
+
+        <button class="nav-card" onclick="showDemandeForm('projet-sport')">
+          <span class="card-icon" aria-hidden="true">⚽</span>
+          <span class="card-title">Projet Jeune Sport</span>
+          <span class="card-hint">Soutien à des projets ou événements sportifs (15–25 ans)</span>
+        </button>
+
+        <button class="nav-card" onclick="showDemandeForm('pied-etrier')">
+          <span class="card-icon" aria-hidden="true">🚀</span>
+          <span class="card-title">Pied à l'Étrier</span>
+          <span class="card-hint">Aide à l'insertion professionnelle et à l'entrepreneuriat (18–25 ans)</span>
+        </button>
+
+        <button class="nav-card" onclick="showDemandeForm('solidarite')">
+          <span class="card-icon" aria-hidden="true">🤝</span>
+          <span class="card-title">Projets Jeunes Solidarité</span>
+          <span class="card-hint">Soutien aux projets solidaires et citoyens (15–25 ans)</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ---- DEMANDE FORM (dynamic) ---- -->
+    <section id="section-demande-form" class="page" hidden>
+      <div id="demande-form-inner"></div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-block">
+        <strong>Direction de la Jeunesse</strong><br />
+        Mairie de Corbeil-Essonnes<br />
+        Place de l'Hôtel de Ville<br />
+        91100 Corbeil-Essonnes
+      </div>
+      <div class="footer-block">
+        <p>📞 <a href="tel:+33160896000">01 60 89 60 00</a></p>
+        <p>✉️ <a href="mailto:jeunesse@corbeil-essonnes.fr">jeunesse@corbeil-essonnes.fr</a></p>
+        <p>🕒 Lundi–Vendredi : 9h – 17h</p>
+      </div>
+      <div class="footer-block footer-links">
+        <a href="https://www.corbeil-essonnes.fr" target="_blank" rel="noopener">Site officiel de la ville</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Mairie de Corbeil-Essonnes – Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
