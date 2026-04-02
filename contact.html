@@ -39,58 +39,93 @@
     <section id="section-contact" class="page">
       <div class="page-header">
         <h2>Contacter la Direction de la Jeunesse</h2>
-        <p>Remplissez le formulaire ci-dessous. Nous vous répondrons dans les meilleurs délais.</p>
+        <p>Remplissez le formulaire ci-dessous ou retrouvez nos coordonnées. Nous vous répondrons dans les meilleurs délais.</p>
       </div>
-      <div class="form-card">
-        <form id="contact-form" class="form" onsubmit="submitContact(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="c-nom">Nom <span class="req" aria-label="obligatoire">*</span></label>
-              <input id="c-nom" type="text" name="nom" autocomplete="family-name" required placeholder="Votre nom" />
+
+      <div class="contact-layout">
+
+        <!-- Form -->
+        <div class="form-card contact-form-card">
+          <form id="contact-form" class="form" onsubmit="submitContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-nom">Nom <span class="req" aria-label="obligatoire">*</span></label>
+                <input id="c-nom" type="text" name="nom" autocomplete="family-name" required placeholder="Votre nom" />
+              </div>
+              <div class="form-group">
+                <label for="c-prenom">Prénom</label>
+                <input id="c-prenom" type="text" name="prenom" autocomplete="given-name" placeholder="Votre prénom" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-mail">Adresse e-mail <span class="req" aria-label="obligatoire">*</span></label>
+                <input id="c-mail" type="email" name="mail" autocomplete="email" required placeholder="exemple@mail.fr" />
+              </div>
+              <div class="form-group">
+                <label for="c-tel">Téléphone</label>
+                <input id="c-tel" type="tel" name="telephone" autocomplete="tel" placeholder="06 XX XX XX XX" />
+              </div>
             </div>
             <div class="form-group">
-              <label for="c-prenom">Prénom</label>
-              <input id="c-prenom" type="text" name="prenom" autocomplete="given-name" placeholder="Votre prénom" />
+              <label for="c-objet">Objet <span class="req" aria-label="obligatoire">*</span></label>
+              <select id="c-objet" name="objet" required>
+                <option value="">— Sélectionnez un objet —</option>
+                <option value="renseignement">Demande de renseignement</option>
+                <option value="projet-jeune">Projet Jeune</option>
+                <option value="projet-sport">Projet Jeune Sport</option>
+                <option value="pied-etrier">Pied à l'Étrier</option>
+                <option value="solidarite">Projets Jeunes Solidarité</option>
+                <option value="suivi-dossier">Suivi de dossier</option>
+                <option value="autre">Autre</option>
+              </select>
             </div>
-          </div>
-          <div class="form-row">
             <div class="form-group">
-              <label for="c-mail">Adresse e-mail <span class="req" aria-label="obligatoire">*</span></label>
-              <input id="c-mail" type="email" name="mail" autocomplete="email" required placeholder="exemple@mail.fr" />
+              <label for="c-message">Message <span class="req" aria-label="obligatoire">*</span></label>
+              <textarea id="c-message" name="message" rows="6" required placeholder="Votre message…"></textarea>
             </div>
-            <div class="form-group">
-              <label for="c-tel">Téléphone</label>
-              <input id="c-tel" type="tel" name="telephone" autocomplete="tel" placeholder="06 XX XX XX XX" />
+            <p class="form-note"><span class="req">*</span> Champs obligatoires</p>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Envoyer le message</button>
+              <a href="index.html" class="btn-ghost" style="display:inline-flex;align-items:center;padding:.68rem 1.4rem;border-radius:6px;border:1.5px solid var(--border);color:var(--text-muted);font-size:.97rem;text-decoration:none;">Annuler</a>
             </div>
+          </form>
+          <div id="contact-success" class="alert-success" hidden>
+            <strong>✅ Votre message a bien été envoyé !</strong>
+            <p>Nous vous répondrons dans un délai de 5 jours ouvrés à l'adresse indiquée.</p>
+            <a href="index.html" class="btn-primary" style="display:inline-block;margin-top:.5rem;">Retour à l'accueil</a>
           </div>
-          <div class="form-group">
-            <label for="c-objet">Objet <span class="req" aria-label="obligatoire">*</span></label>
-            <select id="c-objet" name="objet" required>
-              <option value="">— Sélectionnez un objet —</option>
-              <option value="renseignement">Demande de renseignement</option>
-              <option value="projet-jeune">Projet Jeune</option>
-              <option value="projet-sport">Projet Jeune Sport</option>
-              <option value="pied-etrier">Pied à l'Étrier</option>
-              <option value="solidarite">Projets Jeunes Solidarité</option>
-              <option value="suivi-dossier">Suivi de dossier</option>
-              <option value="autre">Autre</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="c-message">Message <span class="req" aria-label="obligatoire">*</span></label>
-            <textarea id="c-message" name="message" rows="6" required placeholder="Votre message…"></textarea>
-          </div>
-          <p class="form-note"><span class="req">*</span> Champs obligatoires</p>
-          <div class="form-actions">
-            <button type="submit" class="btn-primary">Envoyer le message</button>
-            <button type="button" class="btn-ghost" onclick="showHome()">Annuler</button>
-          </div>
-        </form>
-        <div id="contact-success" class="alert-success" hidden>
-          <strong>✅ Votre message a bien été envoyé !</strong>
-          <p>Nous vous répondrons dans un délai de 5 jours ouvrés à l'adresse indiquée.</p>
-          <button class="btn-primary" onclick="showHome()">Retour à l'accueil</button>
         </div>
+
+        <!-- Contact info sidebar -->
+        <aside class="contact-info-card">
+          <div class="contact-info-image" aria-hidden="true"></div>
+          <div class="contact-info-body">
+            <h3>Nos coordonnées</h3>
+            <ul class="contact-info-list">
+              <li>
+                <span class="ci-icon">📍</span>
+                <span>Mairie de Corbeil-Essonnes<br />Place de l'Hôtel de Ville<br />91100 Corbeil-Essonnes</span>
+              </li>
+              <li>
+                <span class="ci-icon">📞</span>
+                <a href="tel:+33160896000">01 60 89 60 00</a>
+              </li>
+              <li>
+                <span class="ci-icon">✉️</span>
+                <a href="mailto:jeunesse@corbeil-essonnes.fr">jeunesse@corbeil-essonnes.fr</a>
+              </li>
+              <li>
+                <span class="ci-icon">🕒</span>
+                <span>Lundi – Vendredi<br /><strong>9h00 – 17h00</strong></span>
+              </li>
+            </ul>
+            <div class="contact-info-note">
+              <p>Vous pouvez également nous rendre visite directement à l'Hôtel de Ville. Aucun rendez-vous préalable n'est nécessaire.</p>
+            </div>
+          </div>
+        </aside>
+
       </div>
     </section>
 
