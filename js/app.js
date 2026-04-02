@@ -8,16 +8,11 @@
 /* ---------- Navigation helpers ---------- */
 
 function showHome() {
-  switchPage('home');
-  document.getElementById('breadcrumb').hidden = true;
-  document.getElementById('breadcrumb-current').textContent = '';
+  window.location.href = 'index.html';
 }
 
 function showConnexion() {
-  switchPage('connexion');
-  const bc = document.getElementById('breadcrumb');
-  bc.hidden = false;
-  document.getElementById('breadcrumb-current').textContent = 'Espace Ambassadeur';
+  window.location.href = 'connexion.html';
 }
 
 /* ---------- Connexion / Login ---------- */
@@ -55,13 +50,14 @@ function submitConnexion(event) {
  * @param {string} label       – Breadcrumb label
  */
 function showSection(sectionKey, label) {
-  switchPage(sectionKey);
-  const bc = document.getElementById('breadcrumb');
-  bc.hidden = false;
-  document.getElementById('breadcrumb-current').textContent = label;
-
-  // Special initialisation
-  if (sectionKey === 'simulation') initSimulation();
+  const section = document.getElementById('section-' + sectionKey);
+  if (section) {
+    switchPage(sectionKey);
+    document.getElementById('breadcrumb-current').textContent = label;
+    if (sectionKey === 'simulation') initSimulation();
+  } else {
+    window.location.href = sectionKey + '.html';
+  }
 }
 
 function switchPage(key) {
@@ -123,6 +119,11 @@ function showDemandeForm(programKey) {
   if (!prog) return;
 
   var inner = document.getElementById('demande-form-inner');
+  if (!inner) {
+    window.location.href = 'demande.html?program=' + encodeURIComponent(programKey);
+    return;
+  }
+
   inner.innerHTML = '';
 
   var wrap = document.createElement('div');
@@ -740,5 +741,13 @@ function escapeHtml(str) {
 
 /* ---------- Init ---------- */
 document.addEventListener('DOMContentLoaded', function () {
-  showHome();
+  if (document.getElementById('section-simulation')) {
+    initSimulation();
+  } else if (document.getElementById('section-demande')) {
+    var params = new URLSearchParams(window.location.search);
+    var prog = params.get('program');
+    if (prog && PROGRAMS[prog]) {
+      showDemandeForm(prog);
+    }
+  }
 });

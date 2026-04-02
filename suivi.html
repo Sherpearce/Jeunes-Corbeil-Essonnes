@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Direction de la Jeunesse – Corbeil-Essonnes</title>
+  <title>Suivre ma demande – Direction de la Jeunesse – Corbeil-Essonnes</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -18,7 +18,11 @@
           <span class="header-dept">Direction de la Jeunesse</span>
         </div>
       </a>
-      <!-- Breadcrumb -->
+      <nav id="breadcrumb" class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span id="breadcrumb-current">Suivre ma demande</span>
+      </nav>
       <a href="connexion.html" class="btn-connexion">Espace Ambassadeur</a>
     </div>
     <!-- Tricolor bar -->
@@ -32,38 +36,31 @@
   <!-- ========== MAIN ========== -->
   <main id="app">
 
-    <!-- ---- HOME ---- -->
-    <section id="section-home" class="page active">
-      <div class="hero">
-        <h1>Portail Jeunesse</h1>
-        <p class="hero-sub">Bienvenue sur le portail de la Direction de la Jeunesse de Corbeil-Essonnes.<br>Comment pouvons-nous vous aider aujourd'hui ?</p>
+    <section id="section-suivi" class="page">
+      <div class="page-header">
+        <h2>Suivre ma demande</h2>
+        <p>Renseignez votre numéro de dossier pour consulter l'état d'avancement de votre demande.</p>
       </div>
-      <div class="card-grid">
-
-        <a class="nav-card" href="simulation.html">
-          <span class="card-icon" aria-hidden="true">🎯</span>
-          <span class="card-title">Simuler mes droits aux dispositifs Jeunes de Corbeil-Essonnes</span>
-          <span class="card-hint">Découvrez les aides auxquelles vous êtes éligible</span>
-        </a>
-
-        <a class="nav-card" href="demande.html">
-          <span class="card-icon" aria-hidden="true">📋</span>
-          <span class="card-title">Faire une demande</span>
-          <span class="card-hint">Déposez un dossier pour un dispositif jeunesse</span>
-        </a>
-
-        <a class="nav-card" href="suivi.html">
-          <span class="card-icon" aria-hidden="true">🔍</span>
-          <span class="card-title">Suivre ma demande</span>
-          <span class="card-hint">Consultez l'état d'avancement de votre dossier</span>
-        </a>
-
-        <a class="nav-card" href="contact.html">
-          <span class="card-icon" aria-hidden="true">✉️</span>
-          <span class="card-title">Contacter la Direction de la Jeunesse de Corbeil-Essonnes</span>
-          <span class="card-hint">Envoyez-nous un message</span>
-        </a>
-
+      <div class="form-card suivi-card">
+        <form id="suivi-form" class="form" onsubmit="suivreDossier(event)">
+          <div class="form-group">
+            <label for="s-numero">Numéro de dossier <span class="req" aria-label="obligatoire">*</span></label>
+            <input
+              id="s-numero"
+              type="text"
+              name="numeroDossier"
+              required
+              placeholder="CE-2024-0001"
+              autocomplete="off"
+              style="text-transform:uppercase;"
+            />
+            <small class="form-hint">Format : CE-AAAA-XXXX &nbsp;(ex. : CE-2024-0001)</small>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Rechercher</button>
+          </div>
+        </form>
+        <div id="suivi-result" hidden></div>
       </div>
     </section>
 
@@ -92,5 +89,6 @@
     </div>
   </footer>
 
+  <script src="js/app.js"></script>
 </body>
 </html>
