@@ -41,52 +41,72 @@
         <h2>Espace Ambassadeur</h2>
         <p>Connectez-vous pour accéder à votre espace personnel.</p>
       </div>
-      <div class="form-card connexion-card">
-        <form id="connexion-form" class="form" onsubmit="submitConnexion(event)">
-          <div class="form-group">
-            <label for="login-email">Adresse e-mail <span class="req" aria-label="obligatoire">*</span></label>
-            <input
-              id="login-email"
-              type="email"
-              name="email"
-              autocomplete="email"
-              required
-              placeholder="votre.email@example.com"
-            />
+
+      <div class="connexion-split">
+
+        <!-- Image panel -->
+        <div class="connexion-visual" aria-hidden="true">
+          <div class="connexion-visual-caption">
+            <h3>Bienvenue dans l'Espace Ambassadeur</h3>
+            <p>Accédez à votre tableau de bord, gérez les dossiers et suivez les dispositifs jeunesse de Corbeil-Essonnes.</p>
           </div>
-          <div class="form-group">
-            <label for="login-password">Mot de passe <span class="req" aria-label="obligatoire">*</span></label>
-            <input
-              id="login-password"
-              type="password"
-              name="password"
-              autocomplete="current-password"
-              required
-              placeholder="Votre mot de passe"
-            />
-          </div>
-          <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
-            <input type="checkbox" id="login-remember" name="remember" />
-            <label for="login-remember" style="margin: 0; cursor: pointer;">Se souvenir de moi</label>
-          </div>
-          <p class="form-note"><span class="req">*</span> Champs obligatoires</p>
-          <div class="form-actions">
-            <button type="submit" class="btn-primary">Se connecter</button>
-            <button type="button" class="btn-ghost" onclick="showHome()">Annuler</button>
-          </div>
-          <p style="text-align: center; font-size: 0.9rem; margin-top: 1.5rem; color: var(--text-muted);">
-            <a href="#" style="color: var(--primary); text-decoration: none;" onclick="alert('Merci de contacter la Direction de la Jeunesse pour réinitialiser votre mot de passe.'); return false;">Mot de passe oublié ?</a>
-          </p>
-        </form>
-        <div id="connexion-success" class="alert-success" hidden>
-          <strong>✅ Connexion réussie !</strong>
-          <p>Vous êtes maintenant connecté(e) à votre espace ambassadeur.</p>
-          <button class="btn-primary" onclick="showHome()">Retour à l'accueil</button>
         </div>
-        <div id="connexion-error" class="alert-error" hidden>
-          <strong>❌ Erreur de connexion</strong>
-          <p>Les identifiants saisis sont incorrects. Veuillez vérifier votre adresse e-mail et votre mot de passe.</p>
+
+        <!-- Form panel -->
+        <div class="connexion-form-side">
+          <div>
+            <h2>Se connecter</h2>
+            <p class="form-subtitle">Réservé aux ambassadeurs et agents de la Direction de la Jeunesse</p>
+          </div>
+
+          <form id="connexion-form" class="form" onsubmit="submitConnexion(event)">
+            <div class="form-group">
+              <label for="login-email">Adresse e-mail <span class="req" aria-label="obligatoire">*</span></label>
+              <input
+                id="login-email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+                placeholder="votre.email@example.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="login-password">Mot de passe <span class="req" aria-label="obligatoire">*</span></label>
+              <input
+                id="login-password"
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                required
+                placeholder="••••••••"
+              />
+            </div>
+            <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+              <input type="checkbox" id="login-remember" name="remember" />
+              <label for="login-remember" style="margin: 0; font-weight: 400; cursor: pointer;">Se souvenir de moi</label>
+            </div>
+            <p class="form-note"><span class="req">*</span> Champs obligatoires</p>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Se connecter</button>
+              <a href="index.html" class="btn-ghost" style="display:inline-flex;align-items:center;padding:.68rem 1.4rem;border-radius:6px;border:1.5px solid var(--border);color:var(--text-muted);font-size:.97rem;text-decoration:none;">Annuler</a>
+            </div>
+            <p class="forgot-link">
+              <a href="#" onclick="alert('Merci de contacter la Direction de la Jeunesse pour réinitialiser votre mot de passe.'); return false;">Mot de passe oublié ?</a>
+            </p>
+          </form>
+
+          <div id="connexion-success" class="alert-success" hidden>
+            <strong>✅ Connexion réussie !</strong>
+            <p>Vous êtes maintenant connecté(e) à votre espace ambassadeur.</p>
+            <button class="btn-primary" onclick="window.location.href='index.html'">Retour à l'accueil</button>
+          </div>
+          <div id="connexion-error" class="alert-error" hidden>
+            <strong>❌ Erreur de connexion</strong>
+            <p>Les identifiants saisis sont incorrects. Veuillez vérifier votre adresse e-mail et votre mot de passe.</p>
+          </div>
         </div>
+
       </div>
     </section>
 
